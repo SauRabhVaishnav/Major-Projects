@@ -72,9 +72,9 @@ const sessionOptions = {
     }
 };
 
-// app.get("/", (req, res) => {
-//     res.send("Welcome to the world of AirBnB");
-// });
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
 
 app.use(session(sessionOptions));
 app.use(flash());
