@@ -16,14 +16,12 @@ module.exports.showListing = async (req, res) => {
         .populate("owner");
     if (!listing) {
         req.flash("error", "Listing you requested for does not exist!");
-        res.redirect("/listinngs");
+        return res.redirect("/listings");
     }
     res.render("listings/show.ejs", { listing });
 };
 
 module.exports.createListing = async (req, res, next) => {
-    // let { title , description , image , price , location, country } = req.body;
-    // let listing = req.body.listing;
     let url = req.file.path;
     let filename = req.file.filename;
 
@@ -40,7 +38,7 @@ module.exports.renderEditForm = async (req, res) => {
     const listing = await Listing.findById(id);
     if (!listing) {
         req.flash("error", "Listing you requested for does not exist!");
-        res.redirect("/listinngs");
+        return res.redirect("/listings");
     }
     let originalImageUrl = listing.image.url;
     originalImageUrl = originalImageUrl.replace("/upload", "/upload/w_250");

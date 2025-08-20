@@ -6,7 +6,7 @@ const { isValidObjectId } = require('mongoose');
 
 module.exports.isLoggedIn = (req, res, next) => {
     if (!req.isAuthenticated()) {
-        req.session.redirectUrl = req.orignalUrl;
+        req.session.redirectUrl = req.originalUrl;
         req.flash("error", "please login to make changes");
         return res.redirect("/login");
     }
