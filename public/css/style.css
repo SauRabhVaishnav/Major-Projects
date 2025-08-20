@@ -16,7 +16,7 @@ body {
 }
 
 .fa-airbnb {
-    color: #fe424d;
+    color: #3300cd;
     font-size: 2rem;
 }
 
@@ -92,14 +92,8 @@ body {
 }
 
 /* New Page */
-.add-btn {
-    background-color: #fe424d !important;
-    border: none !important;
-}
-/* Edit Page */
-
-.edit-btn {
-    background-color: #fe424d !important;
+.add-btn, .edit-btn, .show-btn, .btn-revSubmit , .signup-btn , .login-btn{
+    background-color: #3300cd !important;
     border: none !important;
 }
 
